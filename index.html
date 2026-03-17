@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hielo Puro | La Unión - Cuenca del Ranco</title>
+    
+    <style>
+        /* --- CSS INTEGRADO Y OPTIMIZADO: HIELO PURO --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica', Arial, sans-serif; scroll-behavior: smooth; }
+        
+        body { background-color: #ffffff; color: #333; overflow-x: hidden; }
+    
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0; width: 100%; height: 80px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 8%; transition: 0.4s; z-index: 1000;
+            background: transparent;
+        }
+    
+        header.abajo {
+            background: rgba(255, 255, 255, 0.98);
+            height: 70px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+    
+        .logo { font-weight: 900; font-size: 1.6rem; color: #fff; letter-spacing: 1px; }
+        header.abajo .logo { color: #0056b3; }
+    
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { text-decoration: none; color: #fff; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        header.abajo nav ul li a { color: #333; }
+    
+        /* SECCIÓN HERO */
+        #inicio {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('img/portada.png'); 
+            background-size: cover;
+            background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            color: #fff; text-align: center;
+            padding: 0 20px;
+        }
+    
+        #inicio h1 { font-size: 4rem; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); font-weight: 900; }
+        #inicio p { font-size: 1.4rem; margin-bottom: 30px; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
+    
+        /* TAGLINE TOP (Logística y Distribución / Hielo con Conciencia) */
+        .tagline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            color: #2ecc71;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+    
+        .tagline::before, .tagline::after {
+            content: "";
+            height: 3px;
+            width: 40px;
+            background-color: #2ecc71;
+            border-radius: 2px;
+        }
+    
+        /* BOTONES Y FLOTANTES */
+        .btn-ws {
+            background: #25d366; color: white; padding: 18px 35px;
+            border-radius: 50px; text-decoration: none; font-weight: bold;
+            display: inline-flex; align-items: center; gap: 10px;
+            transition: 0.3s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .btn-ws:hover { transform: scale(1.05); background: #20ba5a; }
+    
+        .ws-float {
+            position: fixed; bottom: 25px; right: 25px;
+            background: #25d366; width: 65px; height: 65px;
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            z-index: 1000; box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+        .ws-float:hover { transform: scale(1.1); }
+    
+        /* SECCIÓN COBERTURA Y PRODUCTOS */
+       #cobertura { 
+            position: relative; 
+            padding: 100px 8%; 
+            text-align: center;
+            overflow: hidden;
+            background-color: #f8fbff; /* Color por si falla la foto */
+        }
+        
+        .paisaje-fondo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* VERIFICA EL NOMBRE: Si tu foto se llama trumao.jpg, cámbialo aquí */
+            background-image: linear-gradient(rgba(248, 251, 255, 0.8), rgba(248, 251, 255, 0.8)), url('img/trumao2.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 1; /* Esto la manda atrás */
+        }
+        
+        .contenido-cobertura {
+            position: relative;
+            z-index: 2; /* Esto trae el texto al frente */
+        }
+                
+        .cobertura-header { margin-bottom: 60px; }
+        
+        .titulo-seccion { 
+            font-size: 2.8rem; 
+            color: #003366; 
+            margin-bottom: 15px; 
+            font-weight: 900;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.5); /* Sombra para resaltar sobre la foto */
+        }
+        
+        .ubicaciones-container {
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 30px;
+        }
+        
+        .puntos-venta {
+            background: #0056b3; 
+            color: white; 
+            padding: 14px 28px;
+            border-radius: 50px; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,86,179,0.3);
+            transition: 0.3s; 
+            cursor: default;
+            border: 2px solid transparent;
+        }
+        
+        .puntos-venta:hover { 
+            transform: translateY(-5px); 
+            background: #004494;
+            border-color: #fff;
+        }
+    /* Estilos para la nueva sección de productos separada */
+    #productos-lista {
+        padding: 80px 10%;
+        text-align: center;
+        background-color: #ffffff;
+    }
+    
+    .titulo-productos {
+        font-size: 2.5rem;
+        color: #003366;
+        margin-bottom: 10px;
+        font-weight: 800;
+    }
+    
+    .descripcion-hielo {
+        max-width: 800px;
+        margin: 0 auto 40px;
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+    
+    /* Asegura que el grid de tarjetas ocupe el ancho correcto y se centre */
+    .formatos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+    
+        /* TARJETAS DE PRODUCTOS */
+        .productos-destacados { margin-top: 60px; }
+        .titulo-productos { font-size: 2.2rem; color: #003366; margin-bottom: 10px; font-weight: 800; }
+        
+        .formatos-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; margin-top: 50px;
+        }
+        
+        .formato-card {
+            background: #fff; padding: 50px 25px; border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            border: 1px solid #eef2f6; transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .formato-card:hover { border-color: #0056b3; transform: translateY(-10px); }
+        .formato-icono { font-size: 3.5rem; margin-bottom: 20px; display: block; }
+        .formato-card h3 { color: #003366; font-size: 1.6rem; margin-bottom: 12px; }
+    
+        /* ETIQUETAS */
+        .badge {
+            position: absolute; top: 18px; right: -30px;
+            background: #ffcc00; color: #333; font-size: 0.75rem; font-weight: 900;
+            padding: 6px 35px; transform: rotate(45deg);
+        }
+        .badge-blue {
+            position: absolute; top: 18px; right: -30px;
+            background: #0056b3; color: #fff; font-size: 0.75rem; font-weight: 900;
+            padding: 6px 35px; transform: rotate(45deg);
+        }
+    
+        /* SECCIÓN RECICLAJE */
+        #reciclaje { background: #eef9f0; padding: 100px 5%; text-align: center; }
+        .sustentabilidad-container { max-width: 1000px; margin: 0 auto; }
+        .titulo-verde { color: #1a4a31; font-size: 2.5rem; margin-bottom: 15px; font-weight: 900; }
+        .gancho-comercial { font-size: 1.4rem; color: #2e7d32; font-weight: bold; margin-bottom: 25px; }
+        .reciclaje-img { width: 100%; max-width: 1000px; height: auto; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 15px 45px rgba(0,0,0,0.1); }
+        .descripcion-principal { font-size: 1.2rem; color: #555; line-height: 1.8; margin-bottom: 45px; max-width: 850px; margin-left: auto; margin-right: auto; }
+    
+        .pasos-reciclaje { 
+            display: flex; justify-content: space-around; align-items: center; 
+            background: #fff; padding: 40px; border-radius: 30px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05); 
+        }
+        .paso-item { flex: 1; padding: 15px; }
+        .numero { display: block; font-size: 2rem; font-weight: 900; color: #2ecc71; margin-bottom: 10px; }
+        .arrow { color: #2ecc71; font-weight: bold; font-size: 2rem; }
+    
+        /* FOOTER */
+        footer { background: #111; color: #fff; padding: 80px 10%; text-align: center; }
+        .footer-info h2 { font-size: 1.8rem; margin-bottom: 20px; color: #007bff; }
+        .footer-info p { line-height: 2; font-size: 1rem; color: #ccc; }
+    
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header { padding: 0 5%; }
+            #inicio h1 { font-size: 2.5rem; }
+            #inicio p { font-size: 1.1rem; }
+            nav { display: none; }
+            .titulo-seccion { font-size: 2rem; }
+            .pasos-reciclaje { flex-direction: column; gap: 20px; }
+            .arrow { transform: rotate(90deg); margin: 10px 0; }
+            .tagline::before, .tagline::after { width: 20px; }
+            .tagline { font-size: 0.9rem; letter-spacing: 2px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="navbar">
+        <div class="logo">HIELO PURO</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#cobertura">Cobertura</a></li>
+                <li><a href="#reciclaje">Reciclaje</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <a href="https://wa.me/56958295131?text=Hola!%20Quisiera%20pedir%20Hielo%20Puro" class="ws-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WhatsApp">
+    </a>
+
+    <section id="inicio">
+        <h1>HIELO PURO</h1>
+        <p>El hielo más cristalino de la Región de Los Ríos</p>
+        <a href="https://wa.me/56958295131?text=Hola!%20Quisiera%20pedir%20Hielo%20Puro" class="btn-ws" target="_blank">
+            PEDIR AHORA POR WHATSAPP
+        </a>
+    </section>
+
+    <section id="cobertura">
+        <div class="paisaje-fondo"></div> 
+        <div class="contenido-cobertura">
+            <div class="cobertura-header">
+                <h3 class="tagline">Logística y Distribución</h3>
+                <h2 class="titulo-seccion">Abastecemos toda la Cuenca del Ranco</h2>
+                <p class="subtitulo">Llegamos donde otros no. Despacho rápido y programado en:</p>
+                
+                <div class="ubicaciones-container">
+                    <div class="puntos-venta">📍 La Unión</div>
+                    <div class="puntos-venta">📍 Río Bueno</div>
+                    <div class="puntos-venta">📍 Lago Ranco</div>
+                    <div class="puntos-venta">📍 Alrededores</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos-lista">
+        <div class="productos-destacados">
+            <h2 class="titulo-productos">Nuestro Hielo</h2>
+            <p class="descripcion-hielo">
+                Hielo tipo <strong>Campana</strong>: Cristalino, purificado y con el tamaño ideal para enfriar tus bebidas al instante.
+            </p>
+            
+            <div class="formatos-grid">
+                <div class="formato-card">
+                    <div class="formato-icono">🧊</div>
+                    <h3>Formato 1 KG</h3>
+                    <p>Ideal para hogares y consumo individual.</p>
+                    <span class="badge">Más Vendido</span>
+                </div>
+                
+                <div class="formato-card">
+                    <div class="formato-icono">🧊🧊</div>
+                    <h3>Formato 2 KG</h3>
+                    <p>Perfecto para asados familiares y juntas pequeñas.</p>
+                </div>
+                
+                <div class="formato-card">
+                    <div class="formato-icono">❄️</div>
+                    <h3>Formato 5 KG</h3>
+                    <p>Formato ahorro para grandes eventos y comercio.</p>
+                    <span class="badge-blue">Ideal Comercio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</section>
+
+    <section id="reciclaje">
+    <div class="sustentabilidad-container">
+        <h3 class="tagline">Hielo con Conciencia</h3>
+        <h2 class="titulo-verde">Compromiso Sustentable ♻️</h2>
+        <p class="gancho-comercial">
+            Hielo Puro – El único hielo con retiro de residuos en la Provincia del Ranco.
+        </p>
+        
+        <img src="img/reciclaje1.png" alt="Proceso de reciclaje Hielo Puro" class="reciclaje-img">
+        
+        <p class="descripcion-principal">
+            No solo entregamos el mejor hielo, también nos hacemos cargo de nuestro impacto. 
+            Recogemos nuestras bolsas vacías para asegurar que nuestros paisajes, ríos y lagos 
+            de la <strong>Cuenca del Ranco</strong> permanezcan impecables.
+        </p>
+
+        <div class="pasos-reciclaje">
+            <div class="paso-item">
+                <span class="numero">01</span>
+                <p><strong>Disfruta</strong> tu Hielo Puro y guarda la bolsa.</p>
+            </div>
+            <div class="arrow">➜</div>
+            <div class="paso-item">
+                <span class="numero">02</span>
+                <p><strong>Entrega</strong> el envase vacío a nuestro repartidor.</p>
+            </div>
+            <div class="arrow">➜</div>
+            <div class="paso-item">
+                <span class="numero">03</span>
+                <p><strong>Reciclamos</strong> por ti.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer id="contacto">
+        <div class="footer-info">
+            <h2>Hielo Puro - La Unión</h2>
+            <p>📍 La Unión, Región de Los Ríos, Chile</p>
+            <p>🚚 Despachos en toda la Cuenca del Ranco</p>
+            <p>📞 <strong>Teléfono:</strong> +56 9 5829 5131</p>
+            <p>✉️ <strong>Email:</strong> contacto@hielopuro.cl</p>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #444; margin-bottom: 20px;">
+        <p>&copy; 2026 Hielo Puro. Creado con pureza en el sur de Chile.</p>
+    </footer>
+
+    <script>
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("abajo", window.scrollY > 0);
+        });
+    </script>
+
+</body>
+</html>
