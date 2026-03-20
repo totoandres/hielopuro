@@ -804,6 +804,76 @@
              font-size: 0.8rem;
              color: #555;
          }
+
+
+       /* --- FOOTER REFINADO (SIN AMARILLO) --- */
+         #footer-premium {
+             background: #050a0f;
+             color: #ffffff;
+             padding: 80px 8% 40px 8%;
+             border-top: 1px solid rgba(255, 255, 255, 0.1);
+         }
+         
+         .footer-col h3 {
+             font-size: 1.1rem;
+             color: #ffffff; /* Ahora blanco para elegancia total */
+             margin-bottom: 25px;
+             text-transform: uppercase;
+             letter-spacing: 2px;
+             border-bottom: 2px solid #0056b3; /* Subrayado azul para combinar */
+             display: inline-block;
+             padding-bottom: 5px;
+         }
+         
+         .footer-logo span {
+             color: #3b82f6; /* Azul brillante en lugar de amarillo */
+         }
+         
+         /* --- ESTILO DEL BADGE MERLIN CHILE --- */
+         .bottom-flex {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             margin-top: 50px;
+             padding-top: 30px;
+             border-top: 1px solid rgba(255, 255, 255, 0.05);
+             flex-wrap: wrap;
+             gap: 20px;
+         }
+         
+         .diseno-credito {
+             display: flex;
+             align-items: center;
+             gap: 10px;
+             font-size: 0.8rem;
+             color: #888;
+         }
+         
+         .merlin-badge {
+             background: transparent;
+             border: 1px solid #ffffff;
+             color: #ffffff;
+             padding: 6px 12px;
+             text-decoration: none;
+             font-weight: 900;
+             letter-spacing: 1px;
+             font-size: 0.75rem;
+             transition: 0.3s;
+             display: inline-block;
+         }
+         
+         .merlin-badge:hover {
+             background: #ffffff;
+             color: #050a0f;
+             transform: translateY(-2px);
+         }
+         
+         /* Ajuste de colores en las secciones anteriores (para quitar el amarillo) */
+         .specs-premium, .linea-oro, .tag-pro, .ribbon {
+             color: #ffffff !important;
+             background-color: #0056b3 !important; /* Cambiamos amarillo por azul corporativo */
+             border-color: #0056b3 !important;
+         }
          
          /* RESPONSIVE */
          @media (max-width: 900px) {
@@ -1040,16 +1110,16 @@
             <h2 class="footer-logo">HIELO<span>PURO</span></h2>
             <p>Elevando el estándar del frío en el sur de Chile. Pureza, tecnología y compromiso sustentable desde 2026.</p>
             <div class="footer-social">
-                <span>Osorno • Chile</span>
+                <span>La Union • Chile</span>
             </div>
         </div>
 
         <div class="footer-col contact">
             <h3>Contacto Directo</h3>
             <ul>
-                <li><a href="https://wa.me/tunúmero" class="footer-link"><span>📱</span> WhatsApp Ventas</a></li>
+                <li><a href="https://wa.me/56958295131" class="footer-link"><span>📱</span> WhatsApp Ventas</a></li>
                 <li><a href="mailto:contacto@hielopuro.cl" class="footer-link"><span>✉️</span> contacto@hielopuro.cl</a></li>
-                <li><span>📍</span> Planta: Osorno, Los Lagos</li>
+                <li><span>📍</span> Planta: La Union, Region de los Rios</li>
             </ul>
         </div>
 
@@ -1060,9 +1130,18 @@
         </div>
     </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2026 Hielo Puro. Todos los derechos reservados. | Diseñado para la Excelencia.</p>
-    </div>
+     <div class="footer-bottom">
+           <div class="bottom-flex">
+               <p>&copy; 2026 Hielo Puro. Todos los derechos reservados.</p>
+               
+               <div class="diseno-credito">
+                   <span>Diseñado por</span>
+                   <a href="https://www.merlinchile.cl" target="_blank" class="merlin-badge">
+                       MERLIN CHILE
+                   </a>
+               </div>
+           </div>
+       </div>
 </footer>
 
     <script>
