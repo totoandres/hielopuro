@@ -721,11 +721,101 @@
         .numero { display: block; font-size: 2rem; font-weight: 900; color: #2ecc71; margin-bottom: 10px; }
         .arrow { color: #2ecc71; font-weight: bold; font-size: 2rem; }
     
-        /* FOOTER */
-        footer { background: #111; color: #fff; padding: 80px 10%; text-align: center; }
-        .footer-info h2 { font-size: 1.8rem; margin-bottom: 20px; color: #007bff; }
-        .footer-info p { line-height: 2; font-size: 1rem; color: #ccc; }
-    
+        /* --- FOOTER PREMIUM REIMAGINADO --- */
+         #footer-premium {
+             background: #050a0f; /* Un azul casi negro, muy elegante */
+             color: #ffffff;
+             padding: 80px 8% 30px 8%;
+             border-top: 1px solid rgba(212, 175, 55, 0.2); /* Línea oro muy sutil */
+         }
+         
+         .footer-container {
+             display: grid;
+             grid-template-columns: 1.5fr 1fr 1fr;
+             gap: 50px;
+             max-width: 1200px;
+             margin: 0 auto;
+         }
+         
+         .footer-logo {
+             font-size: 2rem;
+             font-weight: 900;
+             letter-spacing: 2px;
+             margin-bottom: 20px;
+         }
+         
+         .footer-logo span {
+             color: #d4af37; /* Oro */
+         }
+         
+         .footer-col h3 {
+             font-size: 1.2rem;
+             color: #d4af37;
+             margin-bottom: 25px;
+             text-transform: uppercase;
+             letter-spacing: 2px;
+         }
+         
+         .footer-col p {
+             color: #aaa;
+             line-height: 1.8;
+             font-size: 0.95rem;
+         }
+         
+         .footer-col ul {
+             list-style: none;
+             padding: 0;
+         }
+         
+         .footer-col ul li {
+             margin-bottom: 15px;
+             color: #ccc;
+         }
+         
+         .footer-link {
+             text-decoration: none;
+             color: #ffffff;
+             transition: 0.3s;
+             display: flex;
+             align-items: center;
+             gap: 10px;
+         }
+         
+         .footer-link:hover {
+             color: #d4af37;
+             transform: translateX(5px);
+         }
+         
+         .horario-badge {
+             display: inline-block;
+             background: rgba(255, 255, 255, 0.05);
+             padding: 10px 20px;
+             border-radius: 50px;
+             margin-top: 15px;
+             font-size: 0.85rem;
+             border: 1px solid rgba(255, 255, 255, 0.1);
+         }
+         
+         .footer-bottom {
+             margin-top: 60px;
+             padding-top: 30px;
+             border-top: 1px solid rgba(255, 255, 255, 0.05);
+             text-align: center;
+             font-size: 0.8rem;
+             color: #555;
+         }
+         
+         /* RESPONSIVE */
+         @media (max-width: 900px) {
+             .footer-container {
+                 grid-template-columns: 1fr;
+                 text-align: center;
+                 gap: 40px;
+             }
+             .footer-link {
+                 justify-content: center;
+             }
+         }
         /* RESPONSIVE */
         @media (max-width: 768px) {
             header { padding: 0 5%; }
@@ -944,17 +1034,36 @@
     </div>
 </section>
 
-    <footer id="contacto">
-        <div class="footer-info">
-            <h2>Hielo Puro - La Unión</h2>
-            <p>📍 La Unión, Región de Los Ríos, Chile</p>
-            <p>🚚 Despachos en toda la Cuenca del Ranco</p>
-            <p>📞 <strong>Teléfono:</strong> +56 9 5829 5131</p>
-            <p>✉️ <strong>Email:</strong> contacto@hielopuro.cl</p>
+    <footer id="footer-premium">
+    <div class="footer-container">
+        <div class="footer-col about">
+            <h2 class="footer-logo">HIELO<span>PURO</span></h2>
+            <p>Elevando el estándar del frío en el sur de Chile. Pureza, tecnología y compromiso sustentable desde 2026.</p>
+            <div class="footer-social">
+                <span>Osorno • Chile</span>
+            </div>
         </div>
-        <hr style="border: 0; border-top: 1px solid #444; margin-bottom: 20px;">
-        <p>&copy; 2026 Hielo Puro. Creado con pureza en el sur de Chile.</p>
-    </footer>
+
+        <div class="footer-col contact">
+            <h3>Contacto Directo</h3>
+            <ul>
+                <li><a href="https://wa.me/tunúmero" class="footer-link"><span>📱</span> WhatsApp Ventas</a></li>
+                <li><a href="mailto:contacto@hielopuro.cl" class="footer-link"><span>✉️</span> contacto@hielopuro.cl</a></li>
+                <li><span>📍</span> Planta: Osorno, Los Lagos</li>
+            </ul>
+        </div>
+
+        <div class="footer-col schedule">
+            <h3>Operaciones</h3>
+            <p>Despacho programado en toda la Cuenca del Ranco.</p>
+            <div class="horario-badge">Lunes a Sábado: 09:00 - 19:00</div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Hielo Puro. Todos los derechos reservados. | Diseñado para la Excelencia.</p>
+    </div>
+</footer>
 
     <script>
         window.addEventListener("scroll", function(){
