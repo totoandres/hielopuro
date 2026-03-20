@@ -73,26 +73,90 @@
         #inicio p { font-size: 1.4rem; margin-bottom: 30px; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
     
         /* TAGLINE TOP (Logística y Distribución / Hielo con Conciencia) */
-        .tagline {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            color: #2ecc71;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-    
-        .tagline::before, .tagline::after {
-            content: "";
-            height: 3px;
-            width: 40px;
-            background-color: #2ecc71;
-            border-radius: 2px;
-        }
+        /* --- SECCIÓN LOGÍSTICA REDISEÑADA --- */
+      #logistica-premium {
+          position: relative;
+          padding: 120px 8%;
+          background-image: url('img/trumao2.jpg');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed; /* Efecto Parallax elegante */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+      }
+      
+      .overlay-logistica {
+          position: absolute;
+          top: 0; left: 0; width: 100%; height: 100%;
+          background: rgba(0, 26, 51, 0.6); /* Azul muy oscuro traslúcido para legibilidad */
+          z-index: 1;
+      }
+      
+      .container-logistica {
+          position: relative;
+          z-index: 2;
+          max-width: 900px;
+      }
+      
+      .tag-logistica {
+          color: #2ecc71; /* Verde éxito */
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          font-weight: 800;
+          font-size: 0.9rem;
+          display: block;
+          margin-bottom: 20px;
+      }
+      
+      #logistica-premium h2 {
+          color: #ffffff;
+          font-size: 3.5rem; /* Letras grandes y potentes */
+          font-weight: 900;
+          line-height: 1.1;
+          margin-bottom: 25px;
+          text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      }
+      
+      #logistica-premium p {
+          color: #f0f0f0;
+          font-size: 1.3rem; /* Texto más grande para que se lea fácil */
+          margin-bottom: 40px;
+          font-weight: 400;
+      }
+      
+      .ubicaciones-premium {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          flex-wrap: wrap;
+      }
+      
+      .punto-v {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: white;
+          padding: 12px 25px;
+          border-radius: 50px;
+          font-weight: 700;
+          font-size: 1.1rem;
+          transition: 0.3s;
+      }
+      
+      .punto-v:hover {
+          background: #0056b3;
+          border-color: #0056b3;
+          transform: translateY(-5px);
+      }
+      
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+          #logistica-premium h2 { font-size: 2.2rem; }
+          #logistica-premium p { font-size: 1.1rem; }
+          .punto-v { font-size: 0.9rem; width: 45%; } /* Dos por fila en celular */
+      }
     
         /* BOTONES Y FLOTANTES */
         .btn-ws {
@@ -702,23 +766,27 @@
         </a>
     </section>
 
-    <section id="cobertura">
-        <div class="paisaje-fondo"></div> 
-        <div class="contenido-cobertura">
-            <div class="cobertura-header">
-                <h3 class="tagline">Logística y Distribución</h3>
-                <h2 class="titulo-seccion">Abastecemos toda la Cuenca del Ranco</h2>
-                <p class="subtitulo">Llegamos donde otros no. Despacho rápido y programado en:</p>
-                
-                <div class="ubicaciones-container">
-                    <div class="puntos-venta">📍 La Unión</div>
-                    <div class="puntos-venta">📍 Río Bueno</div>
-                    <div class="puntos-venta">📍 Lago Ranco</div>
-                    <div class="puntos-venta">📍 Alrededores</div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <section id="logistica-premium">
+       <div class="overlay-logistica"></div>
+       <div class="container-logistica">
+           <div class="logistica-box">
+               <span class="tag-logistica">Distribución Estratégica</span>
+               <h2>Abastecemos toda la Cuenca del Ranco</h2>
+               <p>Llegamos donde otros no. Despacho rápido, programado y con cadena de frío garantizada en:</p>
+               
+               <div class="ubicaciones-premium">
+                   <div class="punto-v"><span>📍</span> La Unión</div>
+                   <div class="punto-v"><span>📍</span> Río Bueno</div>
+                   <div class="punto-v"><span>📍</span> Lago Ranco</div>
+                   <div class="punto-v"><span>📍</span> Alrededores</div>
+               </div>
+           </div>
+       </div>
+   </section>
+
+
+
+   
    <section id="calidad-hielo-premium">
           <div class="container-premium">
               
