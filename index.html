@@ -317,7 +317,66 @@
         margin: 0 auto;
     }
     
-    
+      #formatos-premium {
+          padding: 80px 20px;
+          background-color: #f8fbff; /* Blanco azulado suave */
+          text-align: center;
+      }
+      
+      .titulo-formatos {
+          font-size: 2.2rem;
+          color: #003366;
+          margin-bottom: 50px;
+          font-weight: 800;
+      }
+      
+      .grid-formatos-pro {
+          display: flex;
+          gap: 30px;
+          justify-content: center;
+          max-width: 1100px;
+          margin: 0 auto;
+          flex-wrap: wrap;
+      }
+      
+      .card-formato-pro {
+          flex: 1;
+          min-width: 280px;
+          background: white;
+          padding: 40px 30px;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          border: 1px solid #eef2f6;
+          transition: 0.3s;
+          position: relative;
+      }
+      
+      .card-formato-pro.destacado {
+          border: 2px solid #d4af37; /* El mismo dorado de los vasos */
+          transform: scale(1.05);
+      }
+      
+      .tag-pro {
+          position: absolute;
+          top: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #d4af37;
+          color: #000;
+          padding: 5px 15px;
+          font-size: 0.7rem;
+          font-weight: 800;
+          border-radius: 50px;
+      }
+      
+      .separador-oro {
+          width: 40px;
+          height: 3px;
+          background: #d4af37;
+          margin: 20px auto 0;
+          border-radius: 2px;
+      }
+       
         /* TARJETAS DE PRODUCTOS */
         .productos-destacados { margin-top: 60px; }
         .titulo-productos { font-size: 2.2rem; color: #003366; margin-bottom: 10px; font-weight: 800; }
@@ -470,36 +529,36 @@
       </section>
 
    
-    <section id="productos-lista">
-        <div class="productos-destacados">
-            <h2 class="titulo-productos">Nuestro Hielo</h2>
-            <p class="descripcion-hielo">
-                Hielo tipo <strong>Campana</strong>: Cristalino, purificado y con el tamaño ideal para enfriar tus bebidas al instante.
-            </p>
-            
-            <div class="formatos-grid">
-                <div class="formato-card">
-                    <div class="formato-icono">🧊</div>
-                    <h3>Formato 1 KG</h3>
-                    <p>Ideal para hogares y consumo individual.</p>
-                    <span class="badge">Más Vendido</span>
-                </div>
-                
-                <div class="formato-card">
-                    <div class="formato-icono">🧊🧊</div>
-                    <h3>Formato 2 KG</h3>
-                    <p>Perfecto para asados familiares y juntas pequeñas.</p>
-                </div>
-                
-                <div class="formato-card">
-                    <div class="formato-icono">❄️</div>
-                    <h3>Formato 5 KG</h3>
-                    <p>Formato ahorro para grandes eventos y comercio.</p>
-                    <span class="badge-blue">Ideal Comercio</span>
-                </div>
-            </div>
-        </div>
-    </section>
+   <section id="formatos-premium">
+       <div class="container-formatos">
+           <h2 class="titulo-formatos">Formatos Disponibles</h2>
+           <div class="grid-formatos-pro">
+               
+               <div class="card-formato-pro">
+                   <div class="icono-formato">🧊</div>
+                   <h3>Bolsa 1 KG</h3>
+                   <p>Uso doméstico y juntas rápidas.</p>
+                   <div class="separador-oro"></div>
+               </div>
+   
+               <div class="card-formato-pro destacado">
+                   <span class="tag-pro">EL FAVORITO DE BARES</span>
+                   <div class="icono-formato">🧊🧊</div>
+                   <h3>Bolsa 2 KG</h3>
+                   <p>El estándar para coctelería profesional.</p>
+                   <div class="separador-oro"></div>
+               </div>
+   
+               <div class="card-formato-pro">
+                   <div class="icono-formato">❄️</div>
+                   <h3>Saco 5 KG</h3>
+                   <p>Formato ahorro para grandes eventos.</p>
+                   <div class="separador-oro"></div>
+               </div>
+   
+           </div>
+       </div>
+   </section>
     
 </section>
 
