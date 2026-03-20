@@ -376,6 +376,121 @@
           margin: 20px auto 0;
           border-radius: 2px;
       }
+
+      
+      /* --- SECCIÓN FORMATOS LUXURY --- */
+      #formatos-premium {
+          padding: 100px 5%;
+          background: linear-gradient(180deg, #0a0a0a 0%, #151d26 100%); /* Conecta el negro con un tono azulado profundo */
+          text-align: center;
+          position: relative;
+      }
+      
+      .tagline-oro {
+          color: #d4af37;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          font-size: 0.9rem;
+          margin-bottom: 15px;
+          display: block;
+      }
+      
+      .titulo-formatos {
+          color: #ffffff;
+          font-size: 2.8rem;
+          font-weight: 900;
+          margin-bottom: 60px;
+      }
+      
+      .grid-formatos-luxury {
+          display: flex;
+          gap: 30px;
+          justify-content: center;
+          max-width: 1200px;
+          margin: 0 auto;
+          perspective: 1000px;
+      }
+      
+      .card-luxury {
+          flex: 1;
+          background: rgba(255, 255, 255, 0.03); /* Efecto cristal */
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 20px;
+          padding: 50px 30px;
+          transition: all 0.4s ease;
+          position: relative;
+          backdrop-filter: blur(10px);
+      }
+      
+      .card-luxury:hover {
+          transform: translateY(-10px);
+          background: rgba(255, 255, 255, 0.07);
+          border-color: #d4af37;
+      }
+      
+      .card-luxury.destacado {
+          border: 1px solid #d4af37;
+          background: rgba(212, 175, 55, 0.05);
+      }
+      
+      .capacidad {
+          display: block;
+          font-size: 3.5rem;
+          font-weight: 900;
+          color: #ffffff;
+          margin-bottom: 15px;
+          opacity: 0.9;
+      }
+      
+      .card-luxury h3 {
+          color: #d4af37;
+          font-size: 1.4rem;
+          margin-bottom: 15px;
+          font-weight: 700;
+      }
+      
+      .card-luxury p {
+          color: #bbb;
+          font-size: 1rem;
+          line-height: 1.6;
+      }
+      
+      .linea-oro {
+          width: 40px;
+          height: 2px;
+          background: #d4af37;
+          margin: 25px auto 0;
+      }
+      
+      /* Ribbon Elegante */
+      .ribbon {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: #d4af37;
+          color: #000;
+          padding: 8px 20px;
+          font-size: 0.75rem;
+          font-weight: 900;
+          border-radius: 50px;
+          white-space: nowrap;
+          box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      }
+      
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+          .grid-formatos-luxury {
+              flex-direction: column;
+              align-items: center;
+          }
+          .card-luxury {
+              width: 100%;
+              max-width: 400px;
+          }
+      }
+
+       
        
         /* TARJETAS DE PRODUCTOS */
         .productos-destacados { margin-top: 60px; }
@@ -530,30 +645,38 @@
 
    
    <section id="formatos-premium">
-       <div class="container-formatos">
-           <h2 class="titulo-formatos">Formatos Disponibles</h2>
-           <div class="grid-formatos-pro">
+       <div class="formatos-overlay"></div> <div class="container-formatos">
+           <h3 class="tagline-oro">Logística Profesional</h3>
+           <h2 class="titulo-formatos">Formatos de Distribución</h2>
+           
+           <div class="grid-formatos-luxury">
                
-               <div class="card-formato-pro">
-                   <div class="icono-formato">🧊</div>
-                   <h3>Bolsa 1 KG</h3>
-                   <p>Uso doméstico y juntas rápidas.</p>
-                   <div class="separador-oro"></div>
+               <div class="card-luxury">
+                   <div class="card-inner">
+                       <span class="capacidad">1 KG</span>
+                       <h3>Consumo Individual</h3>
+                       <p>Pureza en formato compacto. Ideal para el hogar y reuniones íntimas.</p>
+                       <div class="linea-oro"></div>
+                   </div>
                </div>
    
-               <div class="card-formato-pro destacado">
-                   <span class="tag-pro">EL FAVORITO DE BARES</span>
-                   <div class="icono-formato">🧊🧊</div>
-                   <h3>Bolsa 2 KG</h3>
-                   <p>El estándar para coctelería profesional.</p>
-                   <div class="separador-oro"></div>
+               <div class="card-luxury destacado">
+                   <div class="card-inner">
+                       <div class="ribbon">EL FAVORITO DE BARES</div>
+                       <span class="capacidad">2 KG</span>
+                       <h3>Estándar Coctelería</h3>
+                       <p>El aliado perfecto de la barra profesional. Rendimiento y calidad superior.</p>
+                       <div class="linea-oro"></div>
+                   </div>
                </div>
    
-               <div class="card-formato-pro">
-                   <div class="icono-formato">❄️</div>
-                   <h3>Saco 5 KG</h3>
-                   <p>Formato ahorro para grandes eventos.</p>
-                   <div class="separador-oro"></div>
+               <div class="card-luxury">
+                   <div class="card-inner">
+                       <span class="capacidad">5 KG</span>
+                       <h3>Formato Industrial</h3>
+                       <p>Máximo ahorro para grandes eventos, banquetes y comercio de alto flujo.</p>
+                       <div class="linea-oro"></div>
+                   </div>
                </div>
    
            </div>
