@@ -111,95 +111,122 @@
             transition: 0.3s;
         }
         .ws-float:hover { transform: scale(1.1); }
-    /* --- SECCIÓN CALIDAD DE HIELO --- */
-      #calidad-hielo {
-          padding: 80px 20px;
-          background-color: #ffffff; /* Fondo limpio para que resalte el hielo */
-          text-align: center;
-      }
-      
-      .titulo-hielo {
-          font-size: 2.5rem;
-          color: #0b5db3;
-          margin-bottom: 50px;
-          font-weight: 800;
-      }
-      
-      .container-hielo {
-          max-width: 1100px;
-          margin: 0 auto;
-      }
-      
-      .hielo-grid {
-          display: flex;
-          gap: 30px;
-          justify-content: center;
-      }
-      
-      .hielo-card {
-          flex: 1;
-          background: #f8fafc;
-          border-radius: 20px;
-          overflow: hidden;
-          box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-          transition: transform 0.3s ease;
-      }
-      
-      .hielo-card:hover {
-          transform: translateY(-10px);
-      }
-      
-      .hielo-img-wrapper {
-          width: 100%;
-          height: 300px;
-          overflow: hidden;
-      }
-      
-      .hielo-img-wrapper img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover; /* Para que la foto no se deforme */
-      }
-      
-      .hielo-texto {
-          padding: 30px;
-          text-align: left;
-      }
-      
-      .hielo-texto h3 {
-          color: #1e293b;
-          font-size: 1.5rem;
-          margin-bottom: 10px;
-      }
-      
-      .hielo-texto .specs {
-          color: #3b82f6;
-          font-weight: 700;
-          font-size: 0.9rem;
-          text-transform: uppercase;
-          margin-bottom: 15px;
-          display: block;
-      }
-      
-      .hielo-texto p {
-          color: #64748b;
-          line-height: 1.6;
-      }
-      
-      /* --- RESPONSIVE PARA CELULARES --- */
-      @media (max-width: 768px) {
-          .hielo-grid {
-              flex-direction: column; /* Se ponen uno arriba del otro */
-          }
-          
-          .titulo-hielo {
-              font-size: 1.8rem;
-          }
-      
-          .hielo-img-wrapper {
-              height: 250px;
-          }
-      }
+   /* --- SECCIÓN CALIDAD DE HIELO PREMIUM (NOCTURNA) --- */
+           #calidad-hielo-premium {
+               padding: 100px 20px;
+               background-color: #0a0a0a; /* Fondo Negro Profundo */
+               text-align: center;
+               position: relative;
+           }
+   
+           .premium-header {
+               max-width: 800px;
+               margin: 0 auto 60px auto;
+           }
+   
+           .titulo-premium {
+               font-size: 3rem;
+               color: #ffffff;
+               font-weight: 900;
+               margin-bottom: 15px;
+               letter-spacing: -1px;
+           }
+   
+           .subtitulo-premium {
+               color: #888;
+               font-size: 1.1rem;
+               line-height: 1.6;
+               font-weight: 400;
+           }
+   
+           .container-premium {
+               max-width: 1200px;
+               margin: 0 auto;
+           }
+   
+           .hielo-grid-premium {
+               display: flex;
+               gap: 40px;
+               justify-content: center;
+               flex-wrap: wrap;
+           }
+   
+           .hielo-card-premium {
+               flex: 1;
+               min-width: 320px;
+               max-width: 480px;
+               background: #141414; /* Gris carbón para la tarjeta */
+               border-radius: 24px;
+               overflow: hidden;
+               border: 1px solid #222;
+               transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+               box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+           }
+   
+           .hielo-card-premium:hover {
+               transform: translateY(-12px);
+               border-color: #3b82f6; /* Brillo azul sutil al pasar el mouse */
+               box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+           }
+   
+           .hielo-img-wrapper-premium {
+               width: 100%;
+               aspect-ratio: 4 / 5; /* Tu formato 1024x1300 */
+               overflow: hidden;
+               position: relative;
+           }
+   
+           .hielo-img-wrapper-premium img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               filter: brightness(0.8) contrast(1.1); /* Look cinematográfico */
+               transition: 0.5s;
+           }
+   
+           .hielo-card-premium:hover img {
+               filter: brightness(1) contrast(1);
+               transform: scale(1.05);
+           }
+   
+           .hielo-texto-premium {
+               padding: 40px 30px;
+               text-align: left;
+           }
+   
+           .hielo-texto-premium h3 {
+               color: #fff;
+               font-size: 1.8rem;
+               margin-bottom: 12px;
+               font-weight: 700;
+           }
+   
+           /* DETALLES TÉCNICOS EN ORO/DORADO */
+           .specs-premium {
+               display: flex;
+               align-items: center;
+               gap: 10px;
+               margin-bottom: 20px;
+               font-size: 0.85rem;
+               color: #d4af37; /* Color Oro para elegancia */
+               font-weight: 700;
+               text-transform: uppercase;
+               letter-spacing: 1.5px;
+           }
+   
+           .hielo-texto-premium p {
+               color: #aaa;
+               line-height: 1.7;
+               font-size: 1rem;
+           }
+   
+           /* --- RESPONSIVE PARA ESTA SECCIÓN --- */
+           @media (max-width: 768px) {
+               .titulo-premium { font-size: 2.2rem; }
+               .hielo-grid-premium { gap: 25px; }
+               .hielo-card-premium { max-width: 100%; }
+               #calidad-hielo-premium { padding: 60px 15px; }
+           }
         /* SECCIÓN COBERTURA Y PRODUCTOS */
        #cobertura { 
             position: relative; 
@@ -400,36 +427,47 @@
             </div>
         </div>
     </section>
-   <section id="calidad-hielo">
-       <div class="container-hielo">
-           <h2 class="titulo-hielo">Hielo de Autor para Coctelería</h2>
-           <div class="hielo-grid">
-               
-               <div class="hielo-card">
-                   <div class="hielo-img-wrapper">
-                       <img src="img/campana2.webp" alt="Hielo Cubo Campana 32mm">
-                   </div>
-                   <div class="hielo-texto">
-                       <h3>Cubo "Campana" Premium</h3>
-                       <p class="specs">32mm x 32mm | 20 Gramos</p>
-                       <p>Hielo macizo de <strong>dilución lenta</strong>. La joya de la corona para whiskys y coctelería clásica que exige pureza.</p>
-                   </div>
-               </div>
-   
-               <div class="hielo-card">
-                   <div class="hielo-img-wrapper">
-                       <img src="img/frappe2.webp" alt="Hielo Frappé Profesional">
-                   </div>
-                   <div class="hielo-texto">
-                       <h3>Hielo Frappé / Picado</h3>
-                       <p class="specs">Cristales Uniformes</p>
-                       <p>Enfriamiento <strong>instantáneo</strong>. Ideal para Mojitos, jugos naturales y exhibición premium de productos.</p>
-                   </div>
-               </div>
-   
-           </div>
-       </div>
-   </section>
+   <section id="calidad-hielo-premium">
+          <div class="container-premium">
+              
+              <div class="premium-header">
+                  <h2 class="titulo-premium">La Diferencia Cristalina en Tu Copa</h2>
+                  <p class="subtitulo-premium">Hielo diseñado para el bartender que exige pureza y consistencia.</p>
+              </div>
+      
+              <div class="hielo-grid-premium">
+                  
+                  <div class="hielo-card-premium">
+                      <div class="hielo-img-wrapper-premium">
+                          <img src="img/hielo-cubo.jpg" alt="Hielo Cubo Campana 32mm - Hielo Puro">
+                          <div class="hielo-logo-grabado">Hielo Puro</div> </div>
+                      <div class="hielo-texto-premium">
+                          <h3>Cubo "Campana" Singular</h3>
+                          <div class="specs-premium">
+                              <span>Formato: 32x32mm</span>
+                              <span class="separador">|</span>
+                              <span>Peso: 20g (Pureza Sólida)</span>
+                          </div>
+                          <p>Macizo, cristalino, con <strong>dilución ultra-lenta</strong>. Diseñado para enfriar sin alterar el perfil de sabor de tus destilados premium.</p>
+                      </div>
+                  </div>
+      
+                  <div class="hielo-card-premium">
+                      <div class="hielo-img-wrapper-premium">
+                          <img src="img/hielo-frappe.jpg" alt="Hielo Frappé Alta Definición - Hielo Puro">
+                          <div class="hielo-logo-grabado">Hielo Puro</div> </div>
+                      <div class="hielo-texto-premium">
+                          <h3>Frappé Alta Definición</h3>
+                          <div class="specs-premium">
+                              <span>Textura: Micro-cristales Uniformes y Relucientes</span>
+                          </div>
+                          <p>Micro-cristales que ofrecen enfriamiento <strong>instantáneo</strong>. La base perfecta y estética para tus Mojitos y coctelería tropical.</p>
+                      </div>
+                  </div>
+      
+              </div>
+          </div>
+      </section>
 
    
     <section id="productos-lista">
