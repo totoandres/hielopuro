@@ -932,11 +932,23 @@
 </head>
 <body>
 
-      <div class="ribbon-wrapper">
-          <div class="ribbon-septiembre">
-              Inicio: Septiembre 2026
-          </div>
-      </div>
+     <div class="ribbon-wrapper">
+       <div class="ribbon-septiembre">
+           INICIO: SEPTIEMBRE 2026
+       </div>
+   </div>
+   
+   <div id="popup-hielopuro" class="overlay-popup">
+       <div class="popup-content">
+           <span class="close-popup" onclick="cerrarPopup()">&times;</span>
+           <img src="img/apertura.webp" alt="Próxima Apertura Hielo Puro">
+           <div class="popup-footer">
+               <a href="https://wa.me/56958295131?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Hielo%20Puro" target="_blank" class="btn-popup">
+                   MÁS INFORMACIÓN AQUÍ
+               </a>
+           </div>
+       </div>
+   </div>
 
     <header id="navbar">
         <div class="logo">HIELO PURO</div>
@@ -1187,5 +1199,19 @@
         });
     </script>
 
+   <script>
+       // Mostrar el pop-up automáticamente
+       window.onload = function() {
+           setTimeout(function() {
+               document.getElementById('popup-hielopuro').style.display = 'flex';
+           }, 2000); 
+       };
+   
+       // Función para cerrar
+       function cerrarPopup() {
+           document.getElementById('popup-hielopuro').style.display = 'none';
+       }
+   </script>
+   
 </body>
 </html>
