@@ -57,7 +57,37 @@
         nav ul li { margin-left: 25px; }
         nav ul li a { text-decoration: none; color: #fff; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         header.abajo nav ul li a { color: #333; }
-    
+
+      /* Estilo del Listón Clásico */
+      .ribbon-wrapper {
+          width: 150px;
+          height: 150px;
+          overflow: hidden;
+          position: fixed;
+          top: 0;
+          right: 0;
+          z-index: 9999;
+      }
+      
+      .ribbon-septiembre {
+          font-weight: 900;
+          font-size: 0.75rem;
+          color: #000;
+          text-transform: uppercase;
+          text-align: center;
+          line-height: 20px;
+          transform: rotate(45deg);
+          position: relative;
+          padding: 10px 0;
+          top: 30px;
+          left: -5px;
+          width: 220px;
+          background-color: #FFD700; /* Amarillo Oro Vibrante */
+          box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+          border: 1px solid rgba(0,0,0,0.1);
+      }
+
+       
         /* SECCIÓN HERO */
         #inicio {
             height: 100vh;
@@ -901,6 +931,12 @@
     </style>
 </head>
 <body>
+
+      <div class="ribbon-wrapper">
+          <div class="ribbon-septiembre">
+              Inicio: Septiembre 2026
+          </div>
+      </div>
 
     <header id="navbar">
         <div class="logo">HIELO PURO</div>
