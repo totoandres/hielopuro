@@ -88,69 +88,65 @@
       }
 
         /* --- DISEÑO DE NIVEL INSTITUCIONAL --- */
+         /* --- ESTILOS DE ALTO IMPACTO --- */
          .overlay-popup {
              position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-             background: rgba(0, 0, 0, 0.95); display: none;
+             background: rgba(0, 0, 0, 0.96); display: none;
              justify-content: center; align-items: center; z-index: 10000;
          }
          
          .popup-card {
-             background: #0a0a0a; /* Negro profundo */
-             width: 90%; max-width: 550px;
-             border: 1px solid #333; /* Recuadro gris técnico */
-             border-radius: 4px; /* Bordes menos redondeados para mayor seriedad */
-             position: relative; overflow: hidden;
-             box-shadow: 0 20px 50px rgba(0,0,0,1);
+             background: #0a0a0a; width: 95%; max-width: 550px;
+             border: 1px solid #444; border-radius: 8px;
+             position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8);
          }
          
-         .popup-image-container {
-             padding: 10px; background: #111; /* Recuadro gris oscuro para la imagen */
+         /* Botón de cierre mejorado */
+         .close-wrapper {
+             position: absolute; top: -15px; right: -15px;
+             width: 35px; height: 35px; background: #FFD700;
+             border-radius: 50%; display: flex; justify-content: center;
+             align-items: center; cursor: pointer; border: 2px solid #000;
+             z-index: 10001; transition: 0.3s;
          }
+         .close-icon { color: #000; font-size: 24px; font-weight: bold; line-height: 0; }
+         .close-wrapper:hover { transform: scale(1.1); background: #fff; }
          
-         .popup-image-container img {
-             width: 100%; height: auto; display: block;
-             border: 1px solid #222;
-         }
+         .popup-image-container { padding: 12px; background: #151515; }
+         .popup-image-container img { width: 100%; border: 1px solid #333; }
          
-         .popup-body {
-             padding: 30px; text-align: center; color: #e0e0e0;
-         }
+         .popup-body { padding: 35px; text-align: center; }
          
          .popup-body h3 {
-             color: #fff; font-size: 1.1rem; letter-spacing: 2px;
-             margin-bottom: 15px; border-bottom: 1px solid #FFD700;
-             display: inline-block; padding-bottom: 5px;
+             color: #FFD700; font-size: 1rem; letter-spacing: 2px;
+             margin-bottom: 15px; font-weight: 800;
          }
          
-         .popup-body p { font-size: 0.9rem; line-height: 1.6; color: #aaa; }
+         .zona-cobertura { color: #fff; font-size: 1.1rem; margin-bottom: 20px; }
+         
+         .compromiso-box {
+             background: #111; border-left: 3px solid #FFD700;
+             padding: 15px; margin: 20px 0;
+         }
+         .compromiso-box p { font-size: 0.9rem; color: #ccc; margin: 0; }
          
          .ice-varieties {
-             margin: 20px 0; font-weight: bold; color: #fff;
-             font-size: 0.8rem; letter-spacing: 1px;
+             font-size: 0.75rem; color: #888; letter-spacing: 1px;
+             margin-bottom: 25px; font-weight: bold;
          }
+         .highlight-nugget { color: #fff; }
          
-         .nugget-desc {
-             font-style: italic; font-size: 0.8rem !important;
-             border-top: 1px solid #222; padding-top: 15px;
-         }
-         
+         /* Botón de Acción Premium */
          .popup-cta a {
-             display: inline-block; margin-top: 25px;
+             display: block; background: transparent;
              color: #FFD700; text-decoration: none;
-             font-weight: bold; font-size: 0.8rem;
-             letter-spacing: 2px; border: 1px solid #FFD700;
-             padding: 12px 30px; transition: 0.3s;
+             font-weight: 800; font-size: 0.85rem; letter-spacing: 1.5px;
+             border: 2px solid #FFD700; padding: 18px;
+             transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
          }
          
-         .popup-cta a:hover {
-             background: #FFD700; color: #000;
-         }
-         
-         .close-popup {
-             position: absolute; top: 15px; right: 20px;
-             color: #666; font-size: 24px; cursor: pointer; z-index: 10;
-         }
-
+         .popup-cta a:hover { background: #FFD700; color: #000; box-shadow: 0 0 20px rgba(255,215,0,0.4); }
+                
        
         /* SECCIÓN HERO */
         #inicio {
@@ -1002,33 +998,39 @@
        </div>
    </div>
    
-    <!-- POP-UP PREMIUM HIELO PURO -->
-   <div id="popup-hielopuro" class="overlay-popup">
-       <div class="popup-card">
-           <span class="close-popup" onclick="cerrarPopup()">&times;</span>
-           
-           <!-- Contenedor de Imagen con Recuadro de Estilo -->
-           <div class="popup-image-container">
-               <img src="img/apertura.webp" alt="Lanzamiento Hielo Puro 2026">
-           </div>
-   
-           <!-- Cuerpo de Texto Editorial -->
-           <div class="popup-body">
-               <h3>PRÓXIMAMENTE EN LA PROVINCIA DEL RANCO</h3>
-               <p>Nos preparamos para revolucionar el mercado con tecnología de vanguardia y entrega de alta eficiencia.</p>
-               
-               <div class="ice-varieties">
-                   <span>HIELO CAMPANA</span> • <span>HIELO CUBO</span> • <span>HIELO NUGGET</span>
-               </div>
-               
-               <p class="nugget-desc">Descubre el nuevo <strong>Hielo Nugget</strong>: la evolución premium del hielo frappé, diseñado para la máxima duración y textura.</p>
-               
-               <div class="popup-cta">
-                   <a href="https://wa.me/56958295131" target="_blank">CONTACTO EXCLUSIVO</a>
-               </div>
-           </div>
-       </div>
-   </div>
+    <!-- POP-UP INSTITUCIONAL HIELO PURO v2.0 -->
+      <div id="popup-hielopuro" class="overlay-popup">
+          <div class="popup-card">
+              <!-- Botón de Cierre con Círculo para mayor visibilidad -->
+              <div class="close-wrapper" onclick="cerrarPopup()">
+                  <span class="close-icon">&times;</span>
+              </div>
+              
+              <div class="popup-image-container">
+                  <img src="img/apertura.webp" alt="Lanzamiento Hielo Puro 2026">
+              </div>
+      
+              <div class="popup-body">
+                  <h3>DESPLIEGUE LOGÍSTICO: SEPTIEMBRE 2026</h3>
+                  <p class="zona-cobertura">Iniciamos entregas oficiales en:<br>
+                  <strong>La Unión • Río Bueno • Lago Ranco • San Pablo • Osorno</strong></p>
+                  
+                  <div class="compromiso-box">
+                      <p>Abastecimiento garantizado para <strong>Minimarkets y Bares</strong> con estricto cumplimiento de producción y entregas a tiempo.</p>
+                  </div>
+      
+                  <div class="ice-varieties">
+                      <span>CAMPANA</span> • <span>CUBO</span> • <span class="highlight-nugget">NUGGET (Modernización del Frappé)</span>
+                  </div>
+                  
+                  <div class="popup-cta">
+                      <a href="https://wa.me/56958295131" target="_blank">
+                          ASEGURA TU CUPO DE ABASTECIMIENTO
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
 
     <header id="navbar">
         <div class="logo">HIELO PURO</div>
