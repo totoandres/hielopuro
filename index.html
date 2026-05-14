@@ -87,59 +87,69 @@
           border: 1px solid rgba(0,0,0,0.1);
       }
 
-         /* --- CORRECCIÓN PROFESIONAL POP-UP --- */
+        /* --- DISEÑO DE NIVEL INSTITUCIONAL --- */
          .overlay-popup {
-             position: fixed;
-             top: 0; left: 0;
-             width: 100%; height: 100%;
-             background: rgba(0, 0, 0, 0.9); /* Fondo más oscuro para dar elegancia */
-             display: none; 
-             justify-content: center;
-             align-items: center;
-             z-index: 10000;
-             padding: 20px; /* Evita que toque los bordes en móviles */
+             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+             background: rgba(0, 0, 0, 0.95); display: none;
+             justify-content: center; align-items: center; z-index: 10000;
          }
          
-         .popup-content {
-             position: relative;
-             width: 100%;
-             max-width: 500px; /* Tamaño máximo sugerido para que no se vea gigante */
-             background: #000;
-             border-radius: 15px;
-             box-shadow: 0 0 30px rgba(255,255,255,0.1);
-             line-height: 0; /* Elimina espacios extra bajo la imagen */
+         .popup-card {
+             background: #0a0a0a; /* Negro profundo */
+             width: 90%; max-width: 550px;
+             border: 1px solid #333; /* Recuadro gris técnico */
+             border-radius: 4px; /* Bordes menos redondeados para mayor seriedad */
+             position: relative; overflow: hidden;
+             box-shadow: 0 20px 50px rgba(0,0,0,1);
          }
          
-         .popup-content img {
-             width: 100%;
-             height: auto; /* Mantiene la proporción */
-             display: block;
-             border-radius: 15px 15px 0 0; /* Redondea solo arriba si hay pie, o todo si no */
+         .popup-image-container {
+             padding: 10px; background: #111; /* Recuadro gris oscuro para la imagen */
+         }
+         
+         .popup-image-container img {
+             width: 100%; height: auto; display: block;
+             border: 1px solid #222;
+         }
+         
+         .popup-body {
+             padding: 30px; text-align: center; color: #e0e0e0;
+         }
+         
+         .popup-body h3 {
+             color: #fff; font-size: 1.1rem; letter-spacing: 2px;
+             margin-bottom: 15px; border-bottom: 1px solid #FFD700;
+             display: inline-block; padding-bottom: 5px;
+         }
+         
+         .popup-body p { font-size: 0.9rem; line-height: 1.6; color: #aaa; }
+         
+         .ice-varieties {
+             margin: 20px 0; font-weight: bold; color: #fff;
+             font-size: 0.8rem; letter-spacing: 1px;
+         }
+         
+         .nugget-desc {
+             font-style: italic; font-size: 0.8rem !important;
+             border-top: 1px solid #222; padding-top: 15px;
+         }
+         
+         .popup-cta a {
+             display: inline-block; margin-top: 25px;
+             color: #FFD700; text-decoration: none;
+             font-weight: bold; font-size: 0.8rem;
+             letter-spacing: 2px; border: 1px solid #FFD700;
+             padding: 12px 30px; transition: 0.3s;
+         }
+         
+         .popup-cta a:hover {
+             background: #FFD700; color: #000;
          }
          
          .close-popup {
-             position: absolute;
-             top: -40px; /* Saca la X fuera de la imagen para que no estorbe */
-             right: 0;
-             color: #fff;
-             font-size: 30px;
-             cursor: pointer;
-             font-family: Arial, sans-serif;
+             position: absolute; top: 15px; right: 20px;
+             color: #666; font-size: 24px; cursor: pointer; z-index: 10;
          }
-         
-         .popup-footer {
-             background: #000;
-             padding: 15px;
-             text-align: center;
-             border-radius: 0 0 15px 15px;
-         }
-         
-         /* Ajuste para celulares pequeños */
-         @media (max-height: 600px) {
-             .popup-content { max-width: 350px; }
-             .btn-popup { padding: 8px 15px; font-size: 0.8rem; }
-         }
-
 
        
         /* SECCIÓN HERO */
@@ -992,14 +1002,30 @@
        </div>
    </div>
    
+    <!-- POP-UP PREMIUM HIELO PURO -->
    <div id="popup-hielopuro" class="overlay-popup">
-       <div class="popup-content">
+       <div class="popup-card">
            <span class="close-popup" onclick="cerrarPopup()">&times;</span>
-           <img src="img/apertura2.webp" alt="Próxima Apertura Hielo Puro">
-           <div class="popup-footer">
-               <a href="https://wa.me/56962008847?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Hielo%20Puro" target="_blank" class="btn-popup">
-                   MÁS INFORMACIÓN AQUÍ
-               </a>
+           
+           <!-- Contenedor de Imagen con Recuadro de Estilo -->
+           <div class="popup-image-container">
+               <img src="img/apertura.webp" alt="Lanzamiento Hielo Puro 2026">
+           </div>
+   
+           <!-- Cuerpo de Texto Editorial -->
+           <div class="popup-body">
+               <h3>PRÓXIMAMENTE EN LA PROVINCIA DEL RANCO</h3>
+               <p>Nos preparamos para revolucionar el mercado con tecnología de vanguardia y entrega de alta eficiencia.</p>
+               
+               <div class="ice-varieties">
+                   <span>HIELO CAMPANA</span> • <span>HIELO CUBO</span> • <span>HIELO NUGGET</span>
+               </div>
+               
+               <p class="nugget-desc">Descubre el nuevo <strong>Hielo Nugget</strong>: la evolución premium del hielo frappé, diseñado para la máxima duración y textura.</p>
+               
+               <div class="popup-cta">
+                   <a href="https://wa.me/56958295131" target="_blank">CONTACTO EXCLUSIVO</a>
+               </div>
            </div>
        </div>
    </div>
