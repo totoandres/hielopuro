@@ -59,33 +59,41 @@
         header.abajo nav ul li a { color: #333; }
 
       /* Estilo del Listón Clásico */
-      .ribbon-wrapper {
-          width: 150px;
-          height: 150px;
-          overflow: hidden;
-          position: fixed;
-          top: 0;
-          right: 0;
-          z-index: 9999;
-      }
-      
-      .ribbon-septiembre {
-          font-weight: 900;
-          font-size: 0.75rem;
-          color: #000;
-          text-transform: uppercase;
-          text-align: center;
-          line-height: 20px;
-          transform: rotate(45deg);
-          position: relative;
-          padding: 10px 0;
-          top: 30px;
-          left: -5px;
-          width: 220px;
-          background-color: #FFD700; /* Amarillo Oro Vibrante */
-          box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-          border: 1px solid rgba(0,0,0,0.1);
-      }
+         /* Contenedor para evitar desbordamientos en la esquina */
+         .ribbon-container {
+             position: fixed;
+             top: 0;
+             right: 0;
+             width: 150px;
+             height: 150px;
+             overflow: hidden;
+             z-index: 998; /* Un nivel por debajo del menú para no tapar la hamburguesa */
+             pointer-events: none; /* Permite hacer clic a través de la esquina si es necesario */
+         }
+         
+         .ribbon-septiembre {
+             position: absolute;
+             top: 30px;      /* Desplazamiento hacia adentro para que el texto respire */
+             right: -40px;   /* Ajuste lateral */
+             width: 220px;
+             transform: rotate(45deg);
+             background: #FFD700; /* Amarillo Institucional */
+             color: #000;
+             text-align: center;
+             font-family: 'Arial Black', sans-serif; /* Tipografía de alta legibilidad */
+             font-size: 11px;
+             font-weight: 900;
+             padding: 8px 0;
+             box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+             letter-spacing: 0.5px;
+             pointer-events: auto;
+         }
+         
+         /* ASEGURAR QUE EL MENÚ HAMBURGUESA SEA VISIBLE */
+         .header-navigation, .menu-toggle {
+             z-index: 1000 !important; /* El menú siempre debe estar al frente */
+             position: relative;
+         }
 
         /* --- DISEÑO DE NIVEL INSTITUCIONAL --- */
         /* --- RESET Y CAPA DE FONDO --- */
@@ -992,9 +1000,10 @@
 </head>
 <body>
 
-     <div class="ribbon-wrapper">
+   <!-- CINTA DE LANZAMIENTO OPTIMIZADA -->
+   <div class="ribbon-container">
        <div class="ribbon-septiembre">
-           INICIO: SEPTIEMBRE 2026
+           LANZAMIENTO: SEPT. 2026
        </div>
    </div>
    
