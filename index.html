@@ -364,17 +364,36 @@
            }
    
            /* DETALLES TÉCNICOS EN ORO/DORADO */
-           .specs-premium {
-               display: flex;
-               align-items: center;
-               gap: 10px;
-               margin-bottom: 20px;
-               font-size: 0.85rem;
-               color: #d4af37; /* Color Oro para elegancia */
-               font-weight: 700;
-               text-transform: uppercase;
-               letter-spacing: 1.5px;
-           }
+    /* --- OPTIMIZACIÓN DE IDENTIDAD VISUAL: ESPECIFICACIONES --- */
+
+         .specs-premium {
+             /* Eliminamos el fondo azul y lo dejamos transparente */
+             background: transparent !important; 
+             
+             /* El texto ahora debe ser blanco para que se lea sobre el fondo oscuro */
+             color: #ffffff; 
+             
+             /* Añadimos un borde sutil arriba y abajo para dar orden técnico */
+             border-top: 1px solid rgba(255, 255, 255, 0.15);
+             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+             
+             /* Ajustes de espaciado y tipografía */
+             padding: 8px 0;
+             margin: 12px 0;
+             display: flex;
+             align-items: center;
+             gap: 10px;
+             font-size: 0.85rem;
+             text-transform: uppercase;
+             letter-spacing: 1px;
+         }
+         
+         /* Estilo para el separador vertical "|" */
+         .specs-premium .separador {
+             color: #0056b3; /* Aquí mantenemos el azul como un acento elegante, no invasivo */
+             font-weight: bold;
+             opacity: 0.8;
+         }
    
            .hielo-texto-premium p {
                color: #aaa;
@@ -1106,11 +1125,13 @@
                           <div class="hielo-logo-grabado">Hielo Puro</div> </div>
                       <div class="hielo-texto-premium">
                           <h3>Cubo "Campana" Singular</h3>
+                         
                           <div class="specs-premium">
                               <span>Formato: 32x32mm</span>
                               <span class="separador">|</span>
                               <span>Peso: 20g (Pureza Sólida)</span>
                           </div>
+                         
                           <p>Macizo, cristalino, con <strong>dilución ultra-lenta</strong>. Diseñado para enfriar sin alterar el perfil de sabor de tus destilados premium.</p>
                       </div>
                   </div>
@@ -1123,9 +1144,11 @@
                       </div>
                       <div class="hielo-texto-premium">
                           <h3>Hielo Nugget Premium</h3>
+                         
                           <div class="specs-premium">
                               <span>Textura: Micro-perlas Cilíndricas de Alta Densidad</span>
                           </div>
+                         
                           <p>La evolución del frappé. Perlas de hielo masticables que ofrecen enfriamiento <strong>inmediato</strong> sin aguar la mezcla. Ideal para coctelería de autor y bebidas premium.</p>
                       </div>
                   </div>
