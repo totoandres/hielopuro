@@ -88,65 +88,65 @@
       }
 
         /* --- DISEÑO DE NIVEL INSTITUCIONAL --- */
-         /* --- ESTILOS DE ALTO IMPACTO --- */
+        /* --- RESET Y CAPA DE FONDO --- */
          .overlay-popup {
              position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-             background: rgba(0, 0, 0, 0.96); display: none;
+             background: rgba(0, 0, 0, 0.98); display: flex;
              justify-content: center; align-items: center; z-index: 10000;
+             padding: 15px;
          }
          
          .popup-card {
-             background: #0a0a0a; width: 95%; max-width: 550px;
-             border: 1px solid #444; border-radius: 8px;
-             position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+             background: #0a0a0a; width: 100%; max-width: 450px;
+             max-height: 95vh; overflow-y: auto; /* Permite scroll si el contenido es largo */
+             border: 1px solid #333; border-radius: 12px;
+             position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.9);
          }
          
-         /* Botón de cierre mejorado */
+         /* --- BOTÓN DE CIERRE (X) MEJORADO --- */
          .close-wrapper {
-             position: absolute; top: -15px; right: -15px;
-             width: 35px; height: 35px; background: #FFD700;
+             position: absolute; top: 12px; right: 12px;
+             width: 34px; height: 34px; background: #FFD700;
              border-radius: 50%; display: flex; justify-content: center;
              align-items: center; cursor: pointer; border: 2px solid #000;
-             z-index: 10001; transition: 0.3s;
+             z-index: 10002; transition: 0.2s;
          }
          .close-icon { color: #000; font-size: 24px; font-weight: bold; line-height: 0; }
          .close-wrapper:hover { transform: scale(1.1); background: #fff; }
          
-         .popup-image-container { padding: 12px; background: #151515; }
-         .popup-image-container img { width: 100%; border: 1px solid #333; }
+         .popup-image-container img { width: 100%; display: block; border-bottom: 1px solid #222; }
          
-         .popup-body { padding: 35px; text-align: center; }
+         .popup-body { padding: 25px; text-align: center; color: #fff; }
          
-         .popup-body h3 {
-             color: #FFD700; font-size: 1rem; letter-spacing: 2px;
-             margin-bottom: 15px; font-weight: 800;
-         }
+         .popup-body h3 { color: #FFD700; font-size: 1.1rem; margin-bottom: 15px; letter-spacing: 1px; }
          
-         .zona-cobertura { color: #fff; font-size: 1.1rem; margin-bottom: 20px; }
+         .seccion-titulo { font-size: 0.75rem; color: #888; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; }
+         
+         .comunas { font-size: 1rem; margin-bottom: 20px; font-weight: 500; }
          
          .compromiso-box {
-             background: #111; border-left: 3px solid #FFD700;
-             padding: 15px; margin: 20px 0;
+             background: #151515; border-left: 4px solid #FFD700;
+             padding: 15px; margin: 15px 0; text-align: left;
          }
-         .compromiso-box p { font-size: 0.9rem; color: #ccc; margin: 0; }
+         .compromiso-box p { font-size: 0.85rem; line-height: 1.4; margin: 0; color: #ccc; }
          
-         .ice-varieties {
-             font-size: 0.75rem; color: #888; letter-spacing: 1px;
-             margin-bottom: 25px; font-weight: bold;
-         }
-         .highlight-nugget { color: #fff; }
+         .ice-varieties { font-size: 0.85rem; line-height: 1.5; margin-bottom: 25px; }
+         .nugget-desc { display: block; margin-top: 8px; color: #eee; }
          
-         /* Botón de Acción Premium */
+         /* --- BOTÓN DE ACCIÓN --- */
          .popup-cta a {
-             display: block; background: transparent;
-             color: #FFD700; text-decoration: none;
-             font-weight: 800; font-size: 0.85rem; letter-spacing: 1.5px;
-             border: 2px solid #FFD700; padding: 18px;
-             transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+             display: block; background: #FFD700; color: #000;
+             text-decoration: none; font-weight: 900; font-size: 0.9rem;
+             padding: 16px; border-radius: 5px; transition: 0.3s;
          }
+         .popup-cta a:hover { background: #fff; transform: translateY(-2px); }
          
-         .popup-cta a:hover { background: #FFD700; color: #000; box-shadow: 0 0 20px rgba(255,215,0,0.4); }
-                
+         /* Ajuste fino para celulares muy pequeños */
+         @media (max-height: 700px) {
+             .popup-body { padding: 15px; }
+             .popup-body h3 { font-size: 1rem; }
+             .comunas { font-size: 0.9rem; }
+         }
        
         /* SECCIÓN HERO */
         #inicio {
@@ -998,10 +998,10 @@
        </div>
    </div>
    
-    <!-- POP-UP INSTITUCIONAL HIELO PURO v2.0 -->
+    <!-- POP-UP INSTITUCIONAL HIELO PURO v2.1 - OPTIMIZADO MÓVIL -->
       <div id="popup-hielopuro" class="overlay-popup">
           <div class="popup-card">
-              <!-- Botón de Cierre con Círculo para mayor visibilidad -->
+              <!-- Botón de Cierre INTERNO: Garantiza visibilidad en cualquier pantalla -->
               <div class="close-wrapper" onclick="cerrarPopup()">
                   <span class="close-icon">&times;</span>
               </div>
@@ -1012,16 +1012,18 @@
       
               <div class="popup-body">
                   <h3>INICIO DE OPERACIONES: SEPTIEMBRE 2026</h3>
-                  <p class="zona-cobertura">Iniciamos entregas oficiales en:<br>
-                  <p>La Unión • Río Bueno • Lago Ranco • San Pablo • Osorno </p>
+                  
+                  <p class="seccion-titulo">COBERTURA REGIONAL:</p>
+                  <p class="comunas">La Unión • Río Bueno • Lago Ranco • San Pablo • Osorno</p>
                   
                   <div class="compromiso-box">
-                      <p>Suministro garantizado con estándar industrial. Maximizamos la eficiencia en la Provincia del Ranco y Osorno con entregas a tiempo y una capacidad de producción diseñada para satisfacer la demanda de Bares y Minimarkets sin excepciones.</p>
+                      <p>Suministro garantizado con estándar industrial. Aseguramos la continuidad operativa de <strong>Bares y Minimarkets</strong> con entregas a tiempo y cumplimiento total de producción.</p>
                   </div>
       
+                  <p class="seccion-titulo">LÍNEA DE PRODUCCIÓN 2026:</p>
                   <div class="ice-varieties">
-                     <p class="zona-cobertura">FORMATOS DE HIELO DISPONIBLES:<br>
-                      <p>Línea Tradicional: • Hielo Campana y • Hielo Cubo Macizo (Diseñados para una dilución lenta y máxima transparencia).Innovación en Textura: • Hielo Nugget Premium  </p>
+                      <p><strong>Línea Tradicional:</strong> Hielo Campana y Cubo Macizo.<br>
+                      <span class="nugget-desc"><strong>Hielo Nugget Premium:</strong> La evolución tecnológica del Frappé. Micro-perlas de alta densidad para un enfriamiento inmediato.</span></p>
                   </div>
                   
                   <div class="popup-cta">
@@ -1032,6 +1034,7 @@
               </div>
           </div>
       </div>
+   
 
     <header id="navbar">
         <div class="logo">HIELO PURO</div>
